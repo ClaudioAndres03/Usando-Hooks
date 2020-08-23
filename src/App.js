@@ -1,29 +1,30 @@
 import React, { useState, useEffect } from "react";
-import logo from "./logo.svg";
+import { getVideos } from "./api/Jorge";
+import ListadeVideos from "./components/ListadeVideos";
 import "./App.css";
 
 function App() {
   const [stateCar, setStateCar] = useState(false);
+  const [lista, setLista] = useState([]);
   const [contar, setContar] = useState(0);
 
-  const encenderApagar = () => {
-    setStateCar(!stateCar);
-    // otra forma de hacerlo
-    // setStateCar((prevValue) => !prevValue);
-    setContar(contar + 1);
+  const HandlerJorge = () => {
+    getVideos().then((json) => {
+      setLista(json);
+    });
   };
 
   useEffect(() => {
-    console.log("Total: " + contar);
-  }, [contar + 1]);
+    getVideos().then((json) => {
+      setLista(json);
+    });
+  }, []);
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h3>El conche esta: {stateCar ? "Encendido" : "Apagado"}</h3>
-        <h4>Cliks: {contar}</h4>
-        <button onClick={encenderApagar}>Encender / Apagar</button>
+        <ListadeVideos lista={lista} />
+        <button onClick={HandlerJorge}>UpdateJorgeAPI</button>
       </header>
     </div>
   );
