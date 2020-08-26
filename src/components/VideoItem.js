@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getVideosFromYoutube } from "./../api/YouTube";
 
-const VideoItem = ({ video }) => (
-  <li>
-    <a href={video.URL}>{video.title}</a>
-  </li>
-);
+const VideoItem = ({ video }) => {
+  const [picture, setPicture] = useState("");
+  useEffect(() => {
+    let videoID = video.URL.replace("https://www.youtube.com/watch?v=", "");
+    getVideosFromYoutube(videoID).then((json) => {});
+  });
+  return (
+    <li class="btn btn-outline-info">
+      <a href={video.URL}>{video.title}</a>
+    </li>
+  );
+};
 
 export default VideoItem;

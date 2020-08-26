@@ -3,11 +3,11 @@ import VideoItem from "./VideoItem";
 
 const ListadeVideos = ({ lista }) => {
   return (
-    <ul>
+    <div>
       {lista.map((video) => (
         <VideoItem video={video} />
       ))}
-    </ul>
+    </div>
   );
 };
 
