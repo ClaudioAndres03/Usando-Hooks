@@ -4,8 +4,8 @@ import VideoItem from "./VideoItem";
 const ListadeVideos = ({ lista }) => {
   return (
     <div>
-      {lista.map((video) => (
-        <VideoItem video={video} />
+      {lista.map((video, i) => (
+        <VideoItem key={i} video={video} />
       ))}
     </div>
   );
