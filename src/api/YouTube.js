@@ -1,6 +1,6 @@
-export function getVideosFromYoutube(videoID) {
+export function getVideosFromYoutube(apiKey, videoID) {
   return fetch(
-    `https://www.googleapis.com/youtube/v3/videos?key=AIzaSyA0OkbvpSxenPPKCCx7a2BIksbWDVkQCok&part=snippet&id=${videoID}`,
+    `https://www.googleapis.com/youtube/v3/videos?key=${apiKey}&part=snippet&id=${videoID}`,
     {
       method: "GET",
     }
