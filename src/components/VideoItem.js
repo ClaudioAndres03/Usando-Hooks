@@ -19,6 +19,11 @@ const VideoItem = ({ video }) => {
       <img src={picture} />
       <a href={video.URL}>{video.title}</a>
     </li>
+
+    // <li className="col-4 bg-is-success">
+    //   <img src={picture} />
+    //   <a href={video.URL}>{video.title}</a>
+    // </li>
   );
 };
 
