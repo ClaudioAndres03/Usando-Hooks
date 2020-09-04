@@ -3,7 +3,6 @@ import { getVideos } from "./api/Jorge";
 import ListadeVideos from "./components/ListadeVideos";
 import "./App.css";
 
-
 function App() {
   const [stateCar, setStateCar] = useState(false);
   const [lista, setLista] = useState([]);
@@ -25,7 +24,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <ListadeVideos lista={lista} />
-        <button onClick={HandlerJorge}>UpdateJorgeAPI</button>
+        <button className="btn btn-info p-30" Click={HandlerJorge}>
+          UpdateJorgeAPI
+        </button>
       </header>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getVideosFromYoutube } from "./../api/YouTube";
+import "../css/VideoStyle.css";
 
 const VideoItem = ({ video }) => {
   const [picture, setPicture] = useState("");
@@ -15,8 +16,9 @@ const VideoItem = ({ video }) => {
     console.log("Video ID == > " + videoID);
   });
   return (
-    <li className="btn btn-outline-info">
-      <img src={picture} />
+    <li className="btn btn-outline-info p-2 m-2">
+      <img className="ImagSize rounded" src={picture} />
+      <br></br>
       <a href={video.URL}>{video.title}</a>
     </li>
 
